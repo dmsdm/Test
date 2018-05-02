@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:Test.ViewModels; assembly=Test"
+             x:Class="Test.Views.HistoryPage">
+
+    <ContentPage.BindingContext>
+        <viewModels:HistoryModel />
+    </ContentPage.BindingContext>
+
+    <ListView x:Name="MyListView"
+              ItemsSource="{Binding Items}"
+              CachingStrategy="RecycleElement"
+              HasUnevenRows="True">
+            
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <StackLayout Padding="8">
+            <Label Text="{Binding Text}" />
+            <Label Text="{Binding Detail}" />
+          </StackLayout>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+      
+  </ListView>
+</ContentPage>

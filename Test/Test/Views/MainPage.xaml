@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:views="clr-namespace:Test.Views"
+            x:Class="Test.Views.MainPage"
+            NavigationPage.HasNavigationBar="False">
+    
+    <TabbedPage.Children>
+        <NavigationPage Title="Translate"
+                        NavigationPage.HasNavigationBar="False">
+            <x:Arguments>
+                <views:TranslatePage />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="History"
+                        NavigationPage.HasNavigationBar="False">
+            <x:Arguments>
+                <views:HistoryPage />
+            </x:Arguments>
+        </NavigationPage>
+    </TabbedPage.Children>
+    
+</TabbedPage>

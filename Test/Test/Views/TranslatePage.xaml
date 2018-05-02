@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Test.Views"
+             xmlns:viewModels="clr-namespace:Test.ViewModels; assembly=Test"
+             x:Class="Test.Views.TranslatePage"
+             Padding="16">
+
+    <ContentPage.BindingContext>
+        <viewModels:TestViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+    <StackLayout>
+        <Picker Title="Translate direction"
+                ItemsSource="{Binding TranslateDirections}"
+                SelectedItem="{Binding TranslateDirection}"/>
+        <Entry  Text="{Binding Text}" />
+        <Button Text="Translate"
+                IsEnabled="{Binding TranslateEnabled}"
+                Command="{Binding Translate}" />
+        <Button Text="Save"
+                IsEnabled="{Binding SaveEnabled}"
+                Command="{Binding Save}" />
+        <Label  Text="{Binding Result}" />
+    </StackLayout>
+    </ScrollView>
+
+</ContentPage>
